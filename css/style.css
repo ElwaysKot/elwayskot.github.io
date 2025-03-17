@@ -303,7 +303,7 @@ ul li {
   gap: 20px;
 }
 .team .team-card {
-  background: #0c1411;
+  background: #0f1a17;
   padding: 20px;
   border-radius: 10px;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -325,6 +325,22 @@ ul li {
   color: #e0fbe6;
   margin-bottom: 10px;
 }
+.team .team-card button {
+  background: #0f1e1a;
+  color: #fff;
+  border: 2px solid lightgrey;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: not-allowed;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+.team .team-card button:hover {
+  background: #0f1e1a;
+  color: #fff;
+  opacity: 0.6;
+}
 .team .team-card .social-links {
   margin-bottom: 10px;
 }
@@ -337,45 +353,6 @@ ul li {
 }
 .team .team-card .social-links a:hover {
   text-decoration: underline;
-}
-.team .team-card button {
-  background: #0f1e1a;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.team .team-card button:hover {
-  background: #204037;
-}
-.team .team-card.looking {
-  background: #1e342d;
-  border: 2px dashed #0f1e1a;
-}
-.team .team-card.looking h3 {
-  color: #0f1e1a;
-}
-.team .team-card.looking p {
-  color: white;
-}
-.team .team-card.looking button {
-  background: #0f1e1a;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: not-allowed;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  opacity: 0.6;
-}
-.team .team-card.looking button:hover {
-  background: #0f1e1a;
-  color: #fff;
-  opacity: 0.6;
 }
 
 .pricing, .reviews {

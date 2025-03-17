@@ -229,7 +229,7 @@ ul {
     }
 
     .team-card {
-        background: darken($card-bg, 5%);
+        background: darken($card-bg, 3%);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -252,7 +252,22 @@ ul {
             color: $text-color;
             margin-bottom: 10px;
         }
+        button {
+              background: $primary-color;
+              color: #fff;
+              border: 2px solid lightgrey;
+              padding: 10px 20px;
+              border-radius: 15px;
+              cursor: not-allowed; // Курсор указывает, что кнопка неактивна
+              transition: 0.3s;
+              opacity: 0.6; // Немного затемняем кнопку
 
+              &:hover {
+                  background: $primary-color;
+                  color: #fff;
+                  opacity: 0.6; // Оставляем тот же стиль при наведении
+              }
+          }
         .social-links {
             margin-bottom: 10px;
 
@@ -266,50 +281,7 @@ ul {
                     text-decoration: underline;
                 }
             }
-        }
-
-        button {
-            background: $primary-color;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-
-            &:hover {
-                background: lighten($primary-color, 10%);
-            }
-        }
-
-        &.looking {
-            background: lighten($card-bg, 5%);
-            border: 2px dashed $primary-color;
-
-            h3 {
-                color: $primary-color;
-            }
-
-            p {
-                color: lighten($text-color, 20%);
-            }
-
-            button {
-              background: $primary-color;
-              color: #fff;
-              border: none;
-              padding: 10px 20px;
-              border-radius: 5px;
-              cursor: not-allowed; // Курсор указывает, что кнопка неактивна
-              transition: 0.3s;
-              opacity: 0.6; // Немного затемняем кнопку
-
-              &:hover {
-                  background: $primary-color;
-                  color: #fff;
-                  opacity: 0.6; // Оставляем тот же стиль при наведении
-              }
-          }
+        
         }
     }
 }
