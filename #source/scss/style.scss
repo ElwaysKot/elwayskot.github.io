@@ -1,0 +1,544 @@
+@import "nullstyle.scss";
+
+// style.scss (SCSS формат — тёмный кибер-стиль с мягко-зелёными оттенками)
+
+$primary-color: #0f1e1a;
+$accent-color: #3efca2;
+$text-color: #e0fbe6;
+$bg-color: #0b1210;
+$card-bg: #15241f;
+$highlight: #27db88;
+
+/* Общие стили для всех скроллбаров на сайте */
+::-webkit-scrollbar {
+  width: 10px; // Толщина вертикального скроллбара
+  height: 10px; // Толщина горизонтального скроллбара
+}
+
+::-webkit-scrollbar-track {
+  background: darken($card-bg, 5%); // Фон трека (дорожки)
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $accent-color; // Цвет ползунка
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: lighten($accent-color, 10%); // Изменение цвета при наведении
+  }
+}
+
+/* Для Firefox */
+* {
+  scrollbar-color: $accent-color darken($card-bg, 5%);
+  scrollbar-width: thin; // "thin" - тонкий скроллбар, "auto" - стандартный
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+.logo img {
+  height: 50px; // Подстрой размер под дизайн
+  width: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
+}
+header {
+  background-color: rgba(15, 30, 26, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(62, 252, 162, 0.2);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $accent-color;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      position: relative;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accent-color;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $accent-color;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem 2rem; // padding-top увеличен для отступа от фиксированной шапки
+}
+
+.hero {
+  background: linear-gradient(to right, darken $bg-color, 5%), darken($primary-color, 10%);
+  text-align: center;
+  padding: 6rem 2rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $accent-color;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: lighten($text-color, 10%);
+  }
+
+  .btn {
+    background-color: $accent-color;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px $accent-color;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+      box-shadow: 0 0 20px $accent-color;
+    }
+  }
+}
+
+section {
+  padding: 4rem 2rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $highlight;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: lighten($text-color, 10%);
+  }
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background-color: $card-bg;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(62, 252, 162, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: $accent-color;
+  }
+
+  p {
+    color: lighten($text-color, 10%);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(62, 252, 162, 0.3);
+  }
+}
+.team {
+    text-align: center;
+    padding: 50px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .team-card {
+        background: darken($card-bg, 5%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        text-align: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $text-color;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-bottom: 10px;
+
+            a {
+                color: #1da1f2;
+                text-decoration: none;
+                margin: 0 5px;
+                transition: 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        button {
+            background: $primary-color;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background: lighten($primary-color, 10%);
+            }
+        }
+
+        &.looking {
+            background: lighten($card-bg, 5%);
+            border: 2px dashed $primary-color;
+
+            h3 {
+                color: $primary-color;
+            }
+
+            p {
+                color: lighten($text-color, 20%);
+            }
+
+            button {
+              background: $primary-color;
+              color: #fff;
+              border: none;
+              padding: 10px 20px;
+              border-radius: 5px;
+              cursor: not-allowed; // Курсор указывает, что кнопка неактивна
+              transition: 0.3s;
+              opacity: 0.6; // Немного затемняем кнопку
+
+              &:hover {
+                  background: $primary-color;
+                  color: #fff;
+                  opacity: 0.6; // Оставляем тот же стиль при наведении
+              }
+          }
+        }
+    }
+}
+
+.pricing, .reviews {
+  position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: darken($bg-color, 3%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $highlight;
+  }
+
+  .info-text {
+    font-size: 1.2rem;
+    color: lighten($text-color, 10%);
+    margin-bottom: 2rem;
+  }
+
+  .blurred-box {
+    position: relative;
+    width: 200px;   // Увеличил ширину
+    height: 100px;  // Увеличил высоту
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid $accent-color;
+    opacity: 0.4;
+    filter: blur(5px);
+  }
+
+  .soon-overlay {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $accent-color;
+    position: absolute;
+    top: 65%; // Опускаем немного ниже центра
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+blockquote {
+  border-left: 4px solid $accent-color;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: lighten($text-color, 10%);
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid lighten($text-color, 20%);
+  padding-bottom: 1rem;
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: $accent-color;
+
+    .faq-toggle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
+  }
+
+  &.active {
+    .faq-answer {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .faq-toggle {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input,
+  textarea {
+    padding: 0.75rem;
+    border: 2px solid transparent; // Изначально без подсветки
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: darken($card-bg, 5%);
+    color: $text-color;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0 0 8px rgba($accent-color, 0.7);
+      outline: none;
+    }
+  }
+
+  textarea {
+    resize: none; // Запрещает изменение размера
+    height: 220px; // Фиксированная высота
+  }
+
+  button {
+    background-color: $accent-color;
+    color: #000;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px $accent-color;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+      box-shadow: 0 0 20px $accent-color;
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.875rem;
+  color: lighten($text-color, 20%);
+}
+// Мобильное меню
+#menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: $accent-color;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+nav {
+  @media (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(11, 18, 16, 0.98);
+    width: 100%;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 0 20px rgba(62, 252, 162, 0.15);
+    text-align: right;
+  }
+
+  &.active {
+    display: flex;
+  }
+}
+
+
+// Иконки Font Awesome
+.icon {
+  font-size: 1.5rem;
+  color: $accent-color;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+// Эффекты появления секций при скролле
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.floating-tg-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: $accent-color;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 255, 100, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+
+  img {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 255, 100, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
