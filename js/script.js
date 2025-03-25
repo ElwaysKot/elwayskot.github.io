@@ -103,4 +103,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fadeElements.forEach(el => observer.observe(el));
 });
+  //Отправка формы через email
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Останавливаем стандартную отправку формы
 
+        // Получаем значения полей
+        const name = document.querySelector("[name='name']").value.trim();
+        const email = document.querySelector("[name='email']").value.trim();
+        const message = document.querySelector("[name='message']").value.trim();
+
+        // Кодируем данные для передачи в URL
+        const encodedSubject = encodeURIComponent("Заявка WhiskerEdge Academy");
+        const encodedBody = encodeURIComponent(
+            `Имя: ${name}\nEmail: ${email}\n\n${message}`
+        );
+
+        // Формируем ссылку для Gmail
+        const gmailURL = `https://mail.google.com/mail/?view=cm&to=elwayskot.ultimate@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+
+        // Открываем Gmail в новой вкладке
+        window.open(gmailURL, "_blank");
+
+        // Сообщение об успешной отправке
+        document.getElementById("statusMessage").textContent = "Сообщение отправлено!";
+        document.getElementById("statusMessage").style.color = "green";
+    });
+});

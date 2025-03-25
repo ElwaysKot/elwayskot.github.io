@@ -23,54 +23,49 @@
     </nav>
     <div class="language-dropdown">
     <button id="selected-lang">UA</button>
-    <ul class="language-options">
+      <ul class="language-options">
         <li data-lang="ru">Русский (RU)</li>
         <li data-lang="ua">Українська (UA)</li>
-    </ul>
-</div>
+      </ul>
+    </div>
   </header>
-
   <section class="hero fade-in">
     <h1>Трейдинг із гострим чуттям</h1>
     <p>Онлайн-академія, де ти розвиваєш навички точності, стратегії та впевненості в ринковому середовищі.</p>
     <a href="#courses" class="btn">Почати навчання</a>
   </section>
-
   <div class="container">
-    <section id="about" class="fade-in">
-      <h2>Про проект</h2>
-      <p>WhiskerEdge Academy – це простір для тих, хто хоче розуміти ринок на інтуїтивному рівні. Ми навчаємо трейдингу з нуля до просунутого рівня, поєднуючи аналітичну строгість та гнучкість мислення. Ми віримо, що успіх — це знання теорій, а й здатність відчути момент.</p>
-    </section>
-
+  <section id="about" class="fade-in">
+    <h2>Про проект</h2>
+    <p>WhiskerEdge Academy – це простір для тих, хто хоче розуміти ринок на інтуїтивному рівні. Ми навчаємо трейдингу з нуля до просунутого рівня, поєднуючи аналітичну строгість та гнучкість мислення. Ми віримо, що успіх — це знання теорій, а й здатність відчути момент.</p>
+  </section>
   <section class="team fade-in">
     <div class="container">
-        <h2>Наша команда</h2>
+      <h2>Наша команда</h2>
         <div class="team-grid">
-            <div class="team-card">
-                <img src="../img/administrator.png" alt="Фото администратора">
-                <h3>Артур</h3>
-                <p>Адміністратор сайту</p>
-                <div class="social-links">
-                    <a href="https://t.me/ElwaysKot" target="_blank">Telegram</a>
-                </div>
-                <button>Зв'язатися</button>
+          <div class="team-card">
+            <img src="../img/administrator.png" alt="Фото администратора">
+            <h3>Артур</h3>
+            <p>Адміністратор сайту</p>
+            <div class="social-links">
+              <a href="https://t.me/ElwaysKot" target="_blank">Telegram</a>
             </div>
-
-            <div class="team-card">
-                <img src="../img/helper.jpg" alt="Фото одногрупника">
-                <h3>Єгор</h3>
-                <p>Спеціаліст</p>
-                <div class="social-links">
-                    <a href="https://t.me/eee_goor" target="_blank">Telegram</a>
-                </div>
-                <button>Зв'язатися</button>
+            <button>Зв'язатися</button>
+          </div>
+          <div class="team-card">
+            <img src="../img/helper.jpg" alt="Фото одногрупника">
+            <h3>Єгор</h3>
+            <p>Спеціаліст</p>
+            <div class="social-links">
+              <a href="https://t.me/eee_goor" target="_blank">Telegram</a>
             </div>
+            <button>Зв'язатися</button>
+          </div>
         </div>
     </div>
   </section>
-
-    <section id="courses" class="fade-in">
-      <h2>Модулі навчального курсу</h2>
+  <section id="courses" class="fade-in">
+    <h2>Модулі навчального курсу</h2>
       <div class="course-grid">
         <div class="course-card"> 
         	<h3>Базовий курс "Трейдинг з нуля"</h3>
@@ -97,16 +92,14 @@
         	<p>Спільна торгівля та глибокий розбір кейсів.</p> 
         </div>
       </div>
-    </section>
-
-    <section id="pricing" class="pricing fade-in">
-  		<h2>Ціни</h2>
-  		<p class="info-text">Ціни ще не надані</p>
-  		<div class="blurred-box"></div>
-  		<div class="soon-overlay">Soon</div>
+  </section>
+  <section id="pricing" class="pricing fade-in">
+  	<h2>Ціни</h2>
+  	<p class="info-text">Ціни ще не надані</p>
+  	<div class="blurred-box"></div>
+  	<div class="soon-overlay">Soon</div>
 	</section>
-
-    <section id="faq" class="faq fade-in">
+  <section id="faq" class="faq fade-in">
     <div class="container">
       <h2>Часті питання</h2>
       <div class="faq-item">
@@ -131,25 +124,23 @@
       	<p class="faq-answer">Так, у нас є спільнота та майстер-група для продовжуючих.</p>
       </div>
   </section>
-
   <section id="reviews" class="reviews fade-in">
 	  <h2>Відгуки</h2>
 	  <p class="info-text">Відгуки скоро з'являться</p>
 	  <div class="blurred-box"></div>
 	  <span class="soon-overlay">Soon</span>
-   </section>
-
-    <section id="contact" class="fade-in">
+  </section>
+  <section id="contact" class="fade-in">
       <h2>Зв'язатися з нами</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Ваше ім'я" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Ваше повідомлення" rows="5" required></textarea>
-        <button type="submit">Надіслати</button>
+      <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+          <button type="submit">Надіслати</button>
+          <p id="statusMessage"></p>
       </form>
-    </section>
+  </section>
   </div>
-
   <footer class="footer">
     &copy; © 2025 WhiskerEdge Academy. Усі права захищені.
   </footer>

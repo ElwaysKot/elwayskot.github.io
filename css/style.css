@@ -687,3 +687,9 @@ nav.active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
