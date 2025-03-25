@@ -36,7 +36,6 @@ $highlight: #27db88;
   scrollbar-width: thin; // "thin" - тонкий скроллбар, "auto" - стандартный
 }
 
-
 html{
   scroll-behavior: smooth;
 }
@@ -513,4 +512,62 @@ nav {
   &:active {
     transform: scale(0.9);
   }
+}
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+
+    #selected-lang {
+        background-color: $card-bg;
+        color: $text-color;
+        border: 2px solid rgba($highlight, 0.7);
+        padding: 8px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &:hover {
+            background-color: rgba($highlight, 0.2);
+        }
+    }
+
+    .language-options {
+        position: absolute;
+        top: 100%;
+        right: 0;  // Прижимаем список к правому краю кнопки
+        left: auto; // Убираем привязку к левому краю
+        background-color: $primary-color;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(5px);
+        transition: all 0.3s ease-in-out;
+        min-width: 150px; // Фиксируем ширину, чтобы текст не выходил за границы
+
+        li {
+            padding: 10px 15px;
+            color: $text-color;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            text-align: left; // Выравниваем текст по левому краю
+
+            &:hover {
+                background-color: $highlight;
+                color: $primary-color;
+            }
+        }
+    }
+
+    &:hover .language-options {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
