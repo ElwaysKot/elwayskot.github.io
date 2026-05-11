@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>WhiskerEdge Academy</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2f3e0f838.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <img src="img/logo.png" alt="WhiskerEdge Academy">
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav class="main-nav" id="nav-menu">
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link page-link active" data-page="home">Главная</a>
+      <ul class="submenu">
+        <li><a href="#hero">Начало</a></li>
+        <li><a href="#about">О проекте</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Связаться</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link page-link" data-page="courses">Курсы</a>
+      <ul class="submenu">
+			  <li><a href="#courses-description">Описание</a></li>
+			  <li><a href="#course-list">Модули</a></li>
+			  <li><a href="#lessons-preview">Уроки</a></li>
+			  <li><a href="#learning-format">Формат</a></li>
+			</ul>
+    </div>
+
+    <div class="nav-item dropdown">
+		  <a href="#" class="nav-link page-link" data-page="testing">Обучение</a>
+		  <ul class="submenu">
+		    <li><a href="#learning-description">Описание вкладки</a></li>
+		    <li><a href="#video-lessons">Видеоуроки</a></li>
+		  </ul>
+		</div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link page-link" data-page="charts">Графики</a>
+      <ul class="submenu">
+        <li><a href="#market">Рынок</a></li>
+        <li><a href="#analytics">Аналитика</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link page-link" data-page="calculator">Калькулятор</a>
+      <ul class="submenu">
+			  <li><a href="#risk">Калькулятор</a></li>
+			  <li><a href="#profit">Объяснение</a></li>
+			</ul>
+    </div>
+
+  </nav>
+</header>
+
+<main class="pages-wrapper">
+
+  <!-- ГЛАВНАЯ -->
+<section class="page active-page" id="home-page">
+
+  <section class="hero fade-in" id="hero">
+    <div class="hero-content">
+      <span class="hero-label">WhiskerEdge Academy</span>
+
+      <h1>Трейдинг с острым чутьём</h1>
+
+      <p>
+        Онлайн-платформа для изучения трейдинга, анализа рынка,
+        риск-менеджмента и развития дисциплины трейдера.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#about" class="btn">Узнать больше</a>
+        <a href="#" class="btn btn-secondary page-link" data-page="courses">Перейти к курсам</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>О проекте</h2>
+    <p>
+      WhiskerEdge Academy — образовательная платформа, созданная для тех,
+      кто хочет изучать трейдинг системно: от базовых понятий до анализа
+      графиков, управления рисками и проверки знаний через тестирование.
+    </p>
+  </section>
+
+  <section id="advantages" class="fade-in">
+    <h2>Преимущества платформы</h2>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>Пошаговое обучение</h3>
+        <p>Материал разделён на понятные темы, чтобы обучение проходило постепенно.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Практический подход</h3>
+        <p>Акцент сделан на примерах, анализе ситуаций и применении знаний.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Проверка знаний</h3>
+        <p>После изучения тем пользователь сможет пройти тестирование.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="fade-in">
+    <h2>Как работает обучение</h2>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>1. Изучение теории</h3>
+        <p>Пользователь знакомится с основами рынка и ключевыми понятиями.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>2. Анализ примеров</h3>
+        <p>На основе графиков и ситуаций разбираются торговые сценарии.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>3. Тестирование</h3>
+        <p>После прохождения материала выполняется проверка знаний.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team fade-in" id="team">
+  <h2>Наша команда</h2>
+
+  <div class="team-grid">
+
+    <!-- Артур -->
+    <div class="team-card">
+      <img src="img/administrator.png" alt="">
+      <h3>Артур</h3>
+      <p>Администратор сайта</p>
+
+      <div class="team-actions">
+        <button class="about-person-btn"
+          data-name="Артур"
+          data-role="Администратор сайта"
+          data-info="Отвечает за структуру сайта, дизайн, навигацию и пользовательский интерфейс.">
+          О человеке
+        </button>
+
+        <div class="contact-dropdown">
+          <button type="button" class="contact-btn">Контакты</button>
+          <div class="contact-menu">
+            <a href="https://t.me/ElwaysKot" target="_blank">Telegram</a>
+            <a href="mailto:example@gmail.com">Gmail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Егор -->
+    <div class="team-card">
+      <img src="img/helper.jpg" alt="">
+      <h3>Егор</h3>
+      <p>Специалист</p>
+
+      <div class="team-actions">
+        <button class="about-person-btn"
+          data-name="Егор"
+          data-role="Специалист"
+          data-info="Работает с аналитикой, помогает в обучении и разработке учебных материалов.">
+          О человеке
+        </button>
+
+        <div class="contact-dropdown">
+          <button type="button" class="contact-btn">Контакты</button>
+          <div class="contact-menu">
+            <a href="https://t.me/eee_goor" target="_blank">Telegram</a>
+            <a href="mailto:example@gmail.com">Gmail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="faq" class="faq fade-in">
+    <h2>Часто задаваемые вопросы</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <strong>Нужны ли знания до начала обучения?</strong>
+        <span class="faq-toggle">+</span>
+      </div>
+      <p class="faq-answer">Нет. Обучение начинается с базовых понятий.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <strong>Сколько длится обучение?</strong>
+        <span class="faq-toggle">+</span>
+      </div>
+      <p class="faq-answer">В среднем от 4 до 8 недель в зависимости от программы.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <strong>Будет ли тестирование?</strong>
+        <span class="faq-toggle">+</span>
+      </div>
+      <p class="faq-answer">Да. В проекте предусмотрен отдельный раздел тестирования знаний.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <strong>Можно ли использовать сайт как учебную платформу?</strong>
+        <span class="faq-toggle">+</span>
+      </div>
+      <p class="faq-answer">Да. Структура сайта рассчитана на курсы, уроки, тесты и вспомогательные инструменты.</p>
+    </div>
+  </section>
+
+</section>
+
+<!-- КУРСЫ -->
+<section class="page" id="courses-page">
+
+  <section id="courses-description" class="fade-in">
+    <h2>Описание курсов</h2>
+    <p>
+      Курсы WhiskerEdge Academy построены как бесплатная учебная система,
+      где пользователь постепенно проходит материалы, изучает графики,
+      выполняет тестирование и открывает доступ к следующим видео-урокам.
+    </p>
+  </section>
+
+  <section id="course-list" class="fade-in">
+    <h2>Модули курса</h2>
+
+    <div class="modules-grid">
+
+		  <div class="course-card module-card"
+		    data-title="1. Основы трейдинга"
+		    data-description="В модуле рассматриваются типы рынков, участники торгов, ордера, таймфреймы, свечи и основные принципы движения цены.">
+		    <h3>1. Основы трейдинга</h3>
+		    <p>Базовые понятия рынка и принципы торговли.</p>
+		  </div>
+
+		  <div class="course-card module-card"
+		    data-title="2. Анализ графиков"
+		    data-description="Пользователь изучает поддержку и сопротивление, тренд, импульсы, коррекции и базовые графические модели.">
+		    <h3>2. Анализ графиков</h3>
+		    <p>Свечи, уровни, тренды и структура движения цены.</p>
+		  </div>
+
+		  <div class="course-card module-card"
+		    data-title="3. Индикаторы и стратегии"
+		    data-description="Модуль знакомит с популярными индикаторами, их назначением и использованием в составе торговой стратегии.">
+		    <h3>3. Индикаторы и стратегии</h3>
+		    <p>Инструменты анализа и поиск торговых сигналов.</p>
+		  </div>
+
+		  <div class="course-card module-card"
+		    data-title="4. Risk Management"
+		    data-description="Разбирается риск на сделку, размер позиции, соотношение риск/прибыль и контроль общей просадки.">
+		    <h3>4. Risk Management</h3>
+		    <p>Контроль риска, расчёт позиции и защита депозита.</p>
+		  </div>
+
+		  <div class="course-card module-card"
+		    data-title="5. Психология трейдинга"
+		    data-description="Модуль посвящён самоконтролю, торговому плану, ведению дневника сделок и снижению эмоциональных решений.">
+		    <h3>5. Психология трейдинга</h3>
+		    <p>Дисциплина, эмоции и работа с торговыми ошибками.</p>
+		  </div>
+
+		</div>
+  </section>
+	</div>
+  <section id="lessons-preview" class="fade-in">
+    <h2>Логика прохождения уроков</h2>
+    <p>
+      Каждый урок построен как последовательный учебный сценарий:
+      сначала пользователь смотрит видео, затем изучает графики,
+      проходит тестирование и только после результата получает доступ
+      к следующему видео-уроку.
+    </p>
+
+    <div class="lesson-flow">
+
+      <div class="lesson-step">
+        <span>1</span>
+        <h3>Видео-урок</h3>
+        <p>Пользователь изучает новую тему через короткий учебный ролик.</p>
+      </div>
+
+      <div class="lesson-step">
+        <span>2</span>
+        <h3>Осмотр графиков</h3>
+        <p>После видео открываются примеры графиков и рыночных ситуаций.</p>
+      </div>
+
+      <div class="lesson-step">
+        <span>3</span>
+        <h3>Тестирование</h3>
+        <p>Пользователь отвечает на вопросы по пройденной теме.</p>
+      </div>
+
+      <div class="lesson-step">
+        <span>4</span>
+        <h3>Результаты</h3>
+        <p>Система показывает количество правильных ответов и итоговый процент.</p>
+      </div>
+
+      <div class="lesson-step">
+        <span>5</span>
+        <h3>Следующий урок</h3>
+        <p>При успешном результате открывается доступ к следующему видео.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="learning-format" class="fade-in">
+    <h2>Формат обучения</h2>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>Бесплатный доступ</h3>
+        <p>Материалы курса доступны бесплатно и не требуют покупки.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Пошаговая система</h3>
+        <p>Новые материалы открываются после прохождения предыдущих этапов.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Контроль знаний</h3>
+        <p>Тесты помогают оценить понимание темы перед переходом дальше.</p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+  <!-- ОБУЧЕНИЕ -->
+<section class="page" id="testing-page">
+
+  <section id="learning-description" class="fade-in">
+    <h2>Обучение</h2>
+    <p>
+      В этом разделе пользователь проходит 5 последовательных уроков.
+      Каждый урок включает видео, графики, мини-тест и результат.
+      Следующий урок открывается только после прохождения теста предыдущего.
+    </p>
+  </section>
+  <div class="learning-progress">
+	  <p>
+	    Прогресс обучения:
+	    <span id="learningProgressText">0%</span>
+	  </p>
+
+	  <div class="progress-bar">
+	    <div class="progress-fill" id="learningProgressFill"></div>
+	  </div>
+
+	  <button id="resetProgressBtn" class="reset-progress-btn">
+	    Сбросить прогресс
+	  </button>
+	</div>
+  <section id="video-lessons" class="fade-in">
+    <h2>Видеоуроки</h2>
+
+    <div class="lesson-block active-lesson" data-lesson="1">
+      <h3>Урок 1. Основы трейдинга</h3>
+
+      <div class="video-box">
+        <video controls>
+          <source src="video/lesson1.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+      <div class="chart-placeholder" id="lesson-charts">
+        <h4>Графики к уроку</h4>
+        <p>Здесь можно вставить PNG-графики для демонстрации ситуации.</p>
+        <img src="img/chart-placeholder.png" alt="График урока">
+      </div>
+
+      <div class="lesson-test">
+			  <h4>Тест к уроку</h4>
+
+			  <div class="test-question">
+			    <p>1. Что показывает японская свеча?</p>
+			    <label><input type="radio" name="lesson1-q1" value="wrong"> Только направление тренда</label>
+			    <label><input type="radio" name="lesson1-q1" value="correct"> Цену открытия, закрытия, максимум и минимум</label>
+			    <label><input type="radio" name="lesson1-q1" value="wrong"> Только объём торгов</label>
+			  </div>
+
+			  <div class="test-question">
+			    <p>2. Что такое таймфрейм?</p>
+			    <label><input type="radio" name="lesson1-q2" value="correct"> Временной период отображения графика</label>
+			    <label><input type="radio" name="lesson1-q2" value="wrong"> Размер депозита</label>
+			    <label><input type="radio" name="lesson1-q2" value="wrong"> Название биржи</label>
+			  </div>
+
+			  <button class="check-test-btn" data-lesson="1" data-questions="5">Завершить тест</button>
+
+			  <p class="test-result"></p>
+			</div>
+    </div>
+
+    <div class="lesson-block locked-lesson" data-lesson="2">
+      <h3>Урок 2. Анализ графиков</h3>
+
+      <div class="lesson-lock-message">
+        Пройдите тест предыдущего урока, чтобы открыть этот урок.
+      </div>
+
+      <div class="lesson-content">
+        <div class="video-box">
+          <video controls>
+            <source src="video/lesson2.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="chart-placeholder">
+          <h4>Графики к уроку</h4>
+          <img src="img/chart-placeholder.png" alt="График урока">
+        </div>
+
+        <div class="lesson-test locked-test">
+				  <h4>Тест к уроку</h4>
+
+				  <div class="test-question">
+				    <p>1. Что показывает японская свеча?</p>
+				    <label><input type="radio" name="lesson2-q1" value="wrong"> Только направление тренда</label>
+				    <label><input type="radio" name="lesson2-q1" value="correct"> Цену открытия, закрытия, максимум и минимум</label>
+				    <label><input type="radio" name="lesson2-q1" value="wrong"> Только объём торгов</label>
+				  </div>
+
+				  <div class="test-question">
+				    <p>2. Что такое таймфрейм?</p>
+				    <label><input type="radio" name="lesson2-q2" value="correct"> Временной период отображения графика</label>
+				    <label><input type="radio" name="lesson2-q2" value="wrong"> Размер депозита</label>
+				    <label><input type="radio" name="lesson2-q2" value="wrong"> Название биржи</label>
+				  </div>
+
+				  <button class="check-test-btn" data-lesson="2" data-questions="5">Завершить тест</button>
+
+				  <p class="test-result"></p>
+				</div>
+      </div>
+    </div>
+
+    <div class="lesson-block locked-lesson" data-lesson="3">
+      <h3>Урок 3. Индикаторы и стратегии</h3>
+
+      <div class="lesson-lock-message">
+        Пройдите тест предыдущего урока, чтобы открыть этот урок.
+      </div>
+
+      <div class="lesson-content">
+        <div class="video-box">
+          <video controls>
+            <source src="video/lesson3.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="chart-placeholder">
+          <h4>Графики к уроку</h4>
+          <img src="img/chart-placeholder.png" alt="График урока">
+        </div>
+
+        <div class="lesson-test locked-test">
+          <h4>Тест к уроку</h4>
+          <p>Для чего используются индикаторы?</p>
+
+          <label><input type="radio" name="lesson3" value="correct"> Для дополнительного анализа рыночной ситуации</label>
+          <label><input type="radio" name="lesson3" value="wrong"> Для гарантированной прибыли</label>
+          <label><input type="radio" name="lesson3" value="wrong"> Для замены риск-менеджмента</label>
+
+          <button class="check-test-btn" data-lesson="3">Проверить тест</button>
+          <p class="test-result"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-block locked-lesson" data-lesson="4">
+      <h3>Урок 4. Risk Management</h3>
+
+      <div class="lesson-lock-message">
+        Пройдите тест предыдущего урока, чтобы открыть этот урок.
+      </div>
+
+      <div class="lesson-content">
+        <div class="video-box">
+          <video controls>
+            <source src="video/lesson4.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="chart-placeholder">
+          <h4>Графики к уроку</h4>
+          <img src="img/chart-placeholder.png" alt="График урока">
+        </div>
+
+        <div class="lesson-test locked-test">
+          <h4>Тест к уроку</h4>
+          <p>Зачем нужен риск-менеджмент?</p>
+
+          <label><input type="radio" name="lesson4" value="correct"> Чтобы ограничивать убытки и контролировать депозит</label>
+          <label><input type="radio" name="lesson4" value="wrong"> Чтобы открывать больше сделок</label>
+          <label><input type="radio" name="lesson4" value="wrong"> Чтобы не анализировать график</label>
+
+          <button class="check-test-btn" data-lesson="4">Проверить тест</button>
+          <p class="test-result"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-block locked-lesson" data-lesson="5">
+      <h3>Урок 5. Психология трейдинга</h3>
+
+      <div class="lesson-lock-message">
+        Пройдите тест предыдущего урока, чтобы открыть этот урок.
+      </div>
+
+      <div class="lesson-content">
+        <div class="video-box">
+          <video controls>
+            <source src="video/lesson5.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="chart-placeholder">
+          <h4>Графики к уроку</h4>
+          <img src="img/chart-placeholder.png" alt="График урока">
+        </div>
+
+        <div class="lesson-test locked-test">
+          <h4>Тест к уроку</h4>
+          <p>Что помогает трейдеру соблюдать дисциплину?</p>
+
+          <label><input type="radio" name="lesson5" value="correct"> Торговый план и контроль эмоций</label>
+          <label><input type="radio" name="lesson5" value="wrong"> Случайные сделки</label>
+          <label><input type="radio" name="lesson5" value="wrong"> Отказ от анализа</label>
+
+          <button class="check-test-btn" data-lesson="5">Проверить тест</button>
+          <p class="test-result"></p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</section>
+
+  <!-- ГРАФИКИ -->
+<section class="page" id="charts-page">
+
+  <section id="market" class="fade-in">
+    <h2>Графики рынка</h2>
+    <p>
+      В этом разделе отображается рыночная информация: изменение цен,
+      капитализация, динамика популярных активов и общее состояние рынка.
+      Блок используется как аналитическое окно для наблюдения за текущей ситуацией.
+    </p>
+  </section>
+
+  <section id="market-window" class="fade-in">
+    <h2>Окно рынка</h2>
+
+    <div class="market-frame">
+      <div class="market-frame-header">
+        <span class="frame-dot"></span>
+        <span class="frame-dot"></span>
+        <span class="frame-dot"></span>
+        <p>Market Overview</p>
+      </div>
+
+      <div class="market-frame-content">
+
+			  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script><div id="coinmarketcap-widget-marquee" coins="1,2,1027,11419,825" currency="USD" theme="dark" transparent="true" show-symbol-logo="true"></div>
+			  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinPriceBlock.js"></script><div id="coinmarketcap-widget-coin-price-block" coins="1,1027,825,1839,2,512,35491" currency="USD" theme="dark" transparent="true" show-symbol-logo="true"></div>
+			  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+			</div>
+    </div>
+  </section>
+
+  <section id="analytics" class="fade-in">
+	  <h2>Крипто-новости</h2>
+	  <p class="telegram-section-text">
+	    Лента публикаций из Telegram-канала с новостями, графиками и рыночными заметками.
+	  </p>
+
+	  <div class="telegram-feed">
+
+	    <div class="telegram-feed-header">
+	      <div class="telegram-channel-info">
+	        <h3>Telegram-лента</h3>
+	        <p>@ega_fx</p>
+	      </div>
+
+	      <a href="https://t.me/ega_fx" target="_blank" class="telegram-open-btn">
+	        Открыть канал
+	      </a>
+	    </div>
+
+	    <div class="telegram-feed-scroll">
+
+	      <div class="telegram-post">
+	        <script async src="https://telegram.org/js/telegram-widget.js?22"
+	          data-telegram-post="ega_fx/1300"
+	          data-width="100%"
+	          data-dark="1">
+	        </script>
+	      </div>
+
+	      <div class="telegram-post">
+	        <script async src="https://telegram.org/js/telegram-widget.js?22"
+	          data-telegram-post="ega_fx/1301"
+	          data-width="100%"
+	          data-dark="1">
+	        </script>
+	      </div>
+
+	      <div class="telegram-post">
+	        <script async src="https://telegram.org/js/telegram-widget.js?22"
+	          data-telegram-post="ega_fx/1302"
+	          data-width="100%"
+	          data-dark="1">
+	        </script>
+	      </div>
+
+	      <div class="telegram-post">
+	        <script async src="https://telegram.org/js/telegram-widget.js?22"
+	          data-telegram-post="ega_fx/1303"
+	          data-width="100%"
+	          data-dark="1">
+	        </script>
+	      </div>
+
+	      <div class="telegram-post">
+	        <script async src="https://telegram.org/js/telegram-widget.js?22"
+	          data-telegram-post="ega_fx/1305"
+	          data-width="100%"
+	          data-dark="1">
+	        </script>
+	      </div>
+
+	    </div>
+	  </div>
+	</section>
+</section>
+  <!-- КАЛЬКУЛЯТОР -->
+<section class="page" id="calculator-page">
+
+  <section id="risk" class="fade-in">
+    <h2>Калькулятор риска</h2>
+    <p>
+      Калькулятор помогает рассчитать допустимый риск в сделке,
+      размер позиции, потенциальную прибыль и соотношение риск/прибыль.
+    </p>
+    <button id="startRiskGuideBtn" class="guide-start-btn">
+		  Как это работает?
+		</button>
+    <div class="risk-calculator">
+
+      <div class="calculator-form">
+
+        <label data-guide="deposit">
+				  Размер депозита ($)
+				  <input type="number" id="deposit" placeholder="Например: 1000">
+				</label>
+
+				<label data-guide="risk">
+				  Риск на сделку (%)
+				  <input type="number" id="riskPercent" placeholder="Например: 2">
+				</label>
+
+				<label data-guide="entry">
+				  Цена входа ($)
+				  <input type="number" id="entryPrice" placeholder="Например: 100">
+				</label>
+
+				<label data-guide="stop">
+				  Стоп-лосс ($)
+				  <input type="number" id="stopLoss" placeholder="Например: 95">
+				</label>
+
+				<label data-guide="take">
+				  Тейк-профит ($)
+				  <input type="number" id="takeProfit" placeholder="Например: 115">
+				</label>
+
+        <button id="calculateRiskBtn" class="calculate-btn">
+          Рассчитать
+        </button>
+
+      </div>
+
+      <div class="calculator-result" id="calculatorResult">
+        <h3>Результат расчёта</h3>
+
+        <div class="result-row">
+          <span>Риск в деньгах:</span>
+          <strong id="riskMoney">$0</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Размер позиции:</span>
+          <strong id="positionSize">0</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Потенциальная прибыль:</span>
+          <strong id="potentialProfit">$0</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Risk / Reward:</span>
+          <strong id="riskReward">0</strong>
+        </div>
+
+        <p class="calculator-message" id="calculatorMessage">
+          Введите данные для расчёта сделки.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="profit" class="fade-in">
+    <h2>Как использовать результат</h2>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>Риск</h3>
+        <p>
+          Показывает сумму, которую пользователь готов потерять,
+          если сделка закроется по стоп-лоссу.
+        </p>
+      </div>
+
+      <div class="course-card">
+        <h3>Размер позиции</h3>
+        <p>
+          Помогает понять, каким объёмом можно войти в сделку,
+          чтобы не превысить заданный риск.
+        </p>
+      </div>
+
+      <div class="course-card">
+        <h3>Risk / Reward</h3>
+        <p>
+          Показывает, насколько потенциальная прибыль превышает риск.
+          Например, 1:3 означает, что прибыль в 3 раза больше риска.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+</main>
+
+<footer class="footer" id="footer">
+  &copy; 2025 WhiskerEdge Academy. Все права защищены.
+</footer>
+
+<a href="https://t.me/ElwaysKot" target="_blank" class="floating-tg-btn">
+  <img src="img/telegram.png" alt="Telegram">
+</a>
+<div class="person-modal" id="personModal">
+  <div class="person-modal-content">
+    <button class="person-modal-close" id="personModalClose">×</button>
+    <h3 id="personModalName"></h3>
+    <p class="person-modal-role" id="personModalRole"></p>
+    <p id="personModalInfo"></p>
+  </div>
+</div>
+<div class="module-modal" id="moduleModal">
+	<div class="module-modal-content">
+	  <button class="module-modal-close" id="moduleModalClose">×</button>
+	  <h3 id="moduleModalTitle"></h3>
+	  <p id="moduleModalText"></p>
+	</div>
+</div>
+<script src="js/script.js"></script>
+<div class="guide-overlay" id="guideOverlay"></div>
+
+<div class="guide-tooltip" id="guideTooltip">
+  <button class="guide-close" id="guideClose">×</button>
+  <span class="guide-step" id="guideStep">1 / 5</span>
+  <h3 id="guideTitle"></h3>
+  <p id="guideText"></p>
+
+  <div class="guide-actions">
+    <button id="guidePrev">Назад</button>
+    <button id="guideNext">Далее</button>
+  </div>
+</div>
+</body>
+</html>
