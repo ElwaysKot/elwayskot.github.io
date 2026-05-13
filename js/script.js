@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // =========================
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.classList.toggle("active");
     });
   }
-
 
 // =========================
 // ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ С АНИМАЦИЕЙ + СОХРАНЕНИЕ
@@ -53,6 +54,9 @@ function switchPage(pageName, index = 0, save = true) {
 
   targetPage.classList.add("active-page", animationClass);
 
+  targetPage.querySelectorAll(".fade-in").forEach(el => {
+    el.classList.add("visible");
+  });
   currentPageIndex = index;
 
   if (save) {
@@ -92,9 +96,22 @@ document.querySelectorAll(".about-person-btn").forEach(button => {
   button.addEventListener("click", e => {
     e.stopPropagation();
 
-    modalName.textContent = button.dataset.name;
-    modalRole.textContent = button.dataset.role;
-    modalInfo.textContent = button.dataset.info;
+    const currentLang = localStorage.getItem("siteLanguage") || "ru";
+
+    modalName.textContent =
+      currentLang === "ua"
+        ? button.dataset.nameUa
+        : button.dataset.nameRu;
+
+    modalRole.textContent =
+      currentLang === "ua"
+        ? button.dataset.roleUa
+        : button.dataset.roleRu;
+
+    modalInfo.textContent =
+      currentLang === "ua"
+        ? button.dataset.infoUa
+        : button.dataset.infoRu;
 
     modal.classList.add("active");
   });
@@ -227,39 +244,6 @@ modal.addEventListener("click", e => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-
-  // =========================
-  // ФОРМА КОНТАКТОВ ЧЕРЕЗ GMAIL
-  // =========================
-  const form = document.getElementById("contactForm");
-
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = form.querySelector("[name='name']").value.trim();
-      const email = form.querySelector("[name='email']").value.trim();
-      const message = form.querySelector("[name='message']").value.trim();
-
-      const subject = encodeURIComponent("Заявка WhiskerEdge Academy");
-      const body = encodeURIComponent(
-        `Имя: ${name}\nEmail: ${email}\n\n${message}`
-      );
-
-      const gmailURL = `https://mail.google.com/mail/?view=cm&to=elwayskot.ultimate@gmail.com&su=${subject}&body=${body}`;
-
-      window.open(gmailURL, "_blank");
-
-      const status = document.getElementById("statusMessage");
-
-      if (status) {
-        status.textContent = "Сообщение отправлено!";
-        status.style.color = "#3efca2";
-      }
-
-      form.reset();
-    });
-  }
   // =========================
   // MODULE MODAL
   // =========================
@@ -271,8 +255,18 @@ modal.addEventListener("click", e => {
   if (moduleModal && moduleModalClose && moduleModalTitle && moduleModalText) {
     document.querySelectorAll(".module-card").forEach(card => {
       card.addEventListener("click", () => {
-        moduleModalTitle.textContent = card.dataset.title;
-        moduleModalText.textContent = card.dataset.description;
+        const currentLang = localStorage.getItem("siteLanguage") || "ru";
+
+        moduleModalTitle.textContent =
+          currentLang === "ua"
+            ? card.dataset.titleUa
+            : card.dataset.titleRu;
+
+        moduleModalText.textContent =
+          currentLang === "ua"
+            ? card.dataset.descriptionUa
+            : card.dataset.descriptionRu;
+
         moduleModal.classList.add("active");
       });
     });
@@ -315,11 +309,17 @@ const PASS_PERCENT = 60;
       const lessonNumber = Number(button.dataset.lesson);
       const lessonBlock = document.querySelector(`.lesson-block[data-lesson="${lessonNumber}"]`);
       const lessonTest = lessonBlock.querySelector(".lesson-test");
-      const questions = lessonBlock.querySelectorAll(".test-question");
+      const questions = lessonTest.querySelectorAll(".test-question");
       const result = lessonBlock.querySelector(".test-result");
 
       if (lessonTest.classList.contains("locked-test")) {
-        result.textContent = "Сначала досмотрите видеоурок до конца.";
+
+        const hasVideo = lessonBlock.querySelector("video");
+
+        result.textContent = hasVideo
+          ? "Спочатку перегляньте відеоурок до кінця."
+          : "Спочатку ознайомтеся з теоретичним матеріалом.";
+
         result.style.color = "#ffcc66";
         return;
       }
@@ -340,7 +340,7 @@ const PASS_PERCENT = 60;
       });
 
       if (answeredCount < questions.length) {
-        result.textContent = `Ответьте на все вопросы. Выполнено: ${answeredCount}/${questions.length}`;
+        result.textContent = `Дайте відповідь на всі питання. Виконано: ${answeredCount}/${questions.length}`;
         result.style.color = "#ffcc66";
         return;
       }
@@ -348,7 +348,7 @@ const PASS_PERCENT = 60;
       const percent = Math.round((correctCount / questions.length) * 100);
 
       if (percent >= PASS_PERCENT) {
-        result.textContent = `Результат: ${percent}%. Урок засчитан, следующий урок открыт.`;
+        result.textContent = `Результат: ${percent}%. Урок зараховано, наступний урок відкрито.`;
         result.style.color = "#3efca2";
 
         lessonBlock.classList.add("completed-lesson");
@@ -362,7 +362,7 @@ const PASS_PERCENT = 60;
 
         updateLearningProgress();
       } else {
-        result.textContent = `Результат: ${percent}%. Нужно минимум ${PASS_PERCENT}%, попробуйте ещё раз.`;
+        result.textContent = `Результат: ${percent}%. Потрібно мінімум ${PASS_PERCENT}%, спробуйте ще раз.`;
         result.style.color = "#ff6b6b";
       }
     });
@@ -422,8 +422,13 @@ const PASS_PERCENT = 60;
   if (resetProgressBtn) {
     resetProgressBtn.addEventListener("click", () => {
 
+      const currentLang =
+        localStorage.getItem("siteLanguage") || "ru";
+
       const confirmReset = confirm(
-        "Вы действительно хотите сбросить весь прогресс обучения?"
+        currentLang === "ua"
+          ? "Ви дійсно хочете скинути весь прогрес навчання?"
+          : "Вы действительно хотите сбросить весь прогресс обучения?"
       );
 
       if (!confirmReset) return;
@@ -435,6 +440,32 @@ const PASS_PERCENT = 60;
       location.reload();
     });
   }
+  document.querySelectorAll(".complete-theory-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const lessonNumber = button.dataset.lesson;
+      const lessonBlock = document.querySelector(`.lesson-block[data-lesson="${lessonNumber}"]`);
+      const lessonTest = lessonBlock.querySelector(".lesson-test");
+
+      if (lessonTest) {
+        lessonTest.classList.remove("locked-test");
+      }
+
+      const watchedVideos = JSON.parse(localStorage.getItem("watchedVideos")) || [];
+
+      if (!watchedVideos.includes(lessonNumber)) {
+        watchedVideos.push(lessonNumber);
+        localStorage.setItem("watchedVideos", JSON.stringify(watchedVideos));
+      }
+
+      button.textContent = "Теорію вивчено ✓";
+      button.disabled = true;
+    });
+  });
+
+  function getCurrentLanguage() {
+    return localStorage.getItem("siteLanguage") || "ru";
+  }
+  
   const calculateRiskBtn = document.getElementById("calculateRiskBtn");
 
   if (calculateRiskBtn) {
@@ -452,13 +483,19 @@ const PASS_PERCENT = 60;
       const messageEl = document.getElementById("calculatorMessage");
 
       if (!deposit || !riskPercent || !entryPrice || !stopLoss || !takeProfit) {
-        messageEl.textContent = "Заполните все поля для расчёта.";
+        messageEl.textContent =
+          getCurrentLanguage() === "ua"
+            ? "Заповніть усі поля для розрахунку."
+            : "Заполните все поля для расчёта.";
         messageEl.style.color = "#ffcc66";
         return;
       }
 
       if (entryPrice === stopLoss) {
-        messageEl.textContent = "Цена входа и стоп-лосс не должны быть одинаковыми.";
+        messageEl.textContent =
+          getCurrentLanguage() === "ua"
+            ? "Ціна входу та стоп-лосс не повинні бути однаковими."
+            : "Цена входа и стоп-лосс не должны быть одинаковыми.";
         messageEl.style.color = "#ff6b6b";
         return;
       }
@@ -478,13 +515,22 @@ const PASS_PERCENT = 60;
       riskRewardEl.textContent = `1:${riskReward.toFixed(2)}`;
 
       if (riskReward >= 3) {
-        messageEl.textContent = "Хорошее соотношение риска и прибыли.";
+        messageEl.textContent =
+          getCurrentLanguage() === "ua"
+            ? "Хороше співвідношення ризику та прибутку."
+            : "Хорошее соотношение риска и прибыли.";
         messageEl.style.color = "#3efca2";
       } else if (riskReward >= 2) {
-        messageEl.textContent = "Нормальное соотношение, но сделку стоит оценить осторожно.";
+        messageEl.textContent =
+          getCurrentLanguage() === "ua"
+            ? "Нормальне співвідношення, але угоду варто оцінити обережно."
+            : "Нормальное соотношение, но сделку стоит оценить осторожно.";
         messageEl.style.color = "#ffcc66";
       } else {
-        messageEl.textContent = "Слабое соотношение риска и прибыли. Сделка может быть невыгодной.";
+        messageEl.textContent =
+          getCurrentLanguage() === "ua"
+            ? "Слабке співвідношення ризику та прибутку. Угода може бути невигідною."
+            : "Слабое соотношение риска и прибыли. Сделка может быть невыгодной.";
         messageEl.style.color = "#ff6b6b";
       }
     });
@@ -492,28 +538,67 @@ const PASS_PERCENT = 60;
   const guideSteps = [
     {
       target: '[data-guide="deposit"]',
-      title: "Размер депозита",
-      text: "Введите общий размер депозита. От этой суммы будет рассчитываться допустимый риск на сделку."
+
+      titleRu: "Размер депозита",
+      titleUa: "Розмір депозиту",
+
+      textRu:
+        "Введите общий размер депозита. От этой суммы будет рассчитываться допустимый риск на сделку.",
+
+      textUa:
+        "Введіть загальний розмір депозиту. Від цієї суми буде розраховуватись допустимий ризик на угоду."
     },
+
     {
       target: '[data-guide="risk"]',
-      title: "Риск на сделку",
-      text: "Введите процент депозита, который готовы потерять в одной сделке. Обычно используют 1–2%."
+
+      titleRu: "Риск на сделку",
+      titleUa: "Ризик на угоду",
+
+      textRu:
+        "Введите процент депозита, который готовы потерять в одной сделке. Обычно используют 1–2%.",
+
+      textUa:
+        "Введіть відсоток депозиту, який готові втратити в одній угоді. Зазвичай використовують 1–2%."
     },
+
     {
       target: '[data-guide="entry"]',
-      title: "Цена входа",
-      text: "Введите цену, по которой планируется открыть сделку."
+
+      titleRu: "Цена входа",
+      titleUa: "Ціна входу",
+
+      textRu:
+        "Введите цену, по которой планируется открыть сделку.",
+
+      textUa:
+        "Введіть ціну, за якою планується відкриття угоди."
     },
+
     {
       target: '[data-guide="stop"]',
-      title: "Стоп-лосс",
-      text: "Введите цену стоп-лосса. Это точка, где сделка закрывается при неблагоприятном движении цены."
+
+      titleRu: "Стоп-лосс",
+      titleUa: "Стоп-лосс",
+
+      textRu:
+        "Введите цену стоп-лосса. Это точка, где сделка закрывается при неблагоприятном движении цены.",
+
+      textUa:
+        "Введіть ціну стоп-лоссу. Це точка, де угода закривається при несприятливому русі ціни."
     },
+
     {
       target: '[data-guide="take"]',
-      title: "Тейк-профит",
-      text: "Введите цену тейк-профита. Это точка, где сделка закрывается при достижении цели."
+
+      titleRu: "Тейк-профит",
+      titleUa: "Тейк-профіт",
+
+      textRu:
+        "Введите цену тейк-профита. Это точка, где сделка закрывается при достижении цели.",
+
+      textUa:
+        "Введіть ціну тейк-профіту. Це точка, де угода закривається при досягненні цілі."
     }
   ];
 
@@ -560,11 +645,23 @@ const PASS_PERCENT = 60;
       const rect = target.getBoundingClientRect();
 
       guideStep.textContent = `${index + 1} / ${guideSteps.length}`;
-      guideTitle.textContent = step.title;
-      guideText.textContent = step.text;
+      const currentLang = getCurrentLanguage();
+
+      guideTitle.textContent =
+        currentLang === "ua"
+          ? step.titleUa
+          : step.titleRu;
+
+      guideText.textContent =
+        currentLang === "ua"
+          ? step.textUa
+          : step.textRu;
 
       guidePrev.disabled = index === 0;
-      guideNext.textContent = index === guideSteps.length - 1 ? "Готово" : "Далее";
+      guideNext.textContent =
+        index === guideSteps.length - 1
+          ? (currentLang === "ua" ? "Готово" : "Готово")
+          : (currentLang === "ua" ? "Далі" : "Далее");
 
       let top = rect.top + rect.height / 2 - guideTooltip.offsetHeight / 2;
       let left = rect.right + 20;
@@ -634,4 +731,8 @@ const PASS_PERCENT = 60;
     switchPage(savedPage, savedIndex >= 0 ? savedIndex : 0, false);
   }
   loadLearningProgress();
+
+  document.querySelectorAll(".page.active-page .fade-in").forEach(el => {
+    el.classList.add("visible");
+  });
 });

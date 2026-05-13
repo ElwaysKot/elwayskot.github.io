@@ -1241,14 +1241,6 @@ blockquote {
   color: #3efca2;
   margin-bottom: 0.8rem;
 }
-.chart-placeholder img {
-  width: 100%;
-  max-height: 360px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-top: 1rem;
-  border-radius: 12px;
-}
 
 .lesson-test {
   background: #070c0a;
@@ -1851,4 +1843,345 @@ blockquote {
 .guide-actions button:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.theory-box {
+  background: #0d1714;
+  border: 1px solid rgba(62, 252, 162, 0.22);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.theory-box h4 {
+  color: #3efca2;
+  margin-bottom: 1rem;
+}
+.theory-box p,
+.theory-box li {
+  color: white;
+  line-height: 1.7;
+}
+.theory-box ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  text-align: left;
+}
+.theory-box li {
+  margin-bottom: 0.5rem;
+}
+
+.complete-theory-btn {
+  margin-top: 1rem;
+  background: #3efca2;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 12px rgba(62, 252, 162, 0.35);
+          box-shadow: 0 0 12px rgba(62, 252, 162, 0.35);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+.complete-theory-btn:hover {
+  background: #66fdb5;
+  -webkit-box-shadow: 0 0 18px rgba(62, 252, 162, 0.55);
+          box-shadow: 0 0 18px rgba(62, 252, 162, 0.55);
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.nested-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+  background: #111e19;
+  border-radius: 12px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown-submenu:hover .nested-submenu {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.lesson-chart-box {
+  width: 100%;
+  height: 360px;
+  margin-top: 1.5rem;
+  background: #070c0a;
+  border: 1px solid rgba(62, 252, 162, 0.16);
+  border-radius: 14px;
+  padding: 1rem;
+  -webkit-box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.25);
+}
+.lesson-chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.lesson-gallery {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.lesson-gallery img {
+  width: 100%;
+  max-height: 420px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: #050908;
+  border: 1px solid rgba(62, 252, 162, 0.18);
+  border-radius: 14px;
+  padding: 0.6rem;
+  -webkit-box-shadow: 0 0 18px rgba(62, 252, 162, 0.12);
+          box-shadow: 0 0 18px rgba(62, 252, 162, 0.12);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+
+.lesson-gallery img:hover {
+  -webkit-transform: scale(1.015);
+          transform: scale(1.015);
+  -webkit-box-shadow: 0 0 24px rgba(62, 252, 162, 0.25);
+          box-shadow: 0 0 24px rgba(62, 252, 162, 0.25);
+}
+
+.theory-text {
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: justify;
+}
+.theory-text h5 {
+  color: #3efca2;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.theory-text p {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+  text-indent: 1.5rem;
+}
+
+.theory-dictionary {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.theory-dictionary h5 {
+  color: #3efca2;
+  font-size: 1.45rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.theory-dictionary .term {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 260px 1.2rem 1fr;
+  grid-template-columns: 260px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(62, 252, 162, 0.12);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+.theory-dictionary .term:hover {
+  background: rgba(62, 252, 162, 0.03);
+  padding-left: 0.6rem;
+  border-radius: 8px;
+}
+.theory-dictionary strong {
+  color: #3efca2;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.theory-dictionary span {
+  color: white;
+  line-height: 1.7;
+}
+
+.theory-dictionary h5:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.charts-description {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: white;
+}
+
+.crypto-charts-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.crypto-chart-card {
+  background: #0d1714;
+  border: 1px solid rgba(62, 252, 162, 0.18);
+  border-radius: 18px;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0 0 22px rgba(62, 252, 162, 0.14);
+          box-shadow: 0 0 22px rgba(62, 252, 162, 0.14);
+}
+.crypto-chart-card h3 {
+  color: #3efca2;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.crypto-chart-box {
+  height: 300px;
+  background: #08100e;
+  border-radius: 14px;
+  padding: 1rem;
+}
+.crypto-chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1100px) {
+  .crypto-charts-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.crypto-chart-card {
+  cursor: pointer;
+}
+
+.crypto-chart-card.active-crypto-card {
+  border-color: rgba(62, 252, 162, 0.55);
+  -webkit-box-shadow: 0 0 28px rgba(62, 252, 162, 0.28);
+          box-shadow: 0 0 28px rgba(62, 252, 162, 0.28);
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.selected-crypto-panel {
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  background: #0d1714;
+  border: 1px solid rgba(62, 252, 162, 0.2);
+  border-radius: 18px;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0 0 24px rgba(62, 252, 162, 0.16);
+          box-shadow: 0 0 24px rgba(62, 252, 162, 0.16);
+}
+
+.selected-crypto-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.selected-crypto-header h3 {
+  color: #3efca2;
+  margin-bottom: 0.3rem;
+}
+.selected-crypto-header p {
+  color: white;
+}
+.selected-crypto-header span {
+  background: rgba(62, 252, 162, 0.12);
+  color: #3efca2;
+  border: 1px solid rgba(62, 252, 162, 0.3);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 800;
+}
+
+.selected-crypto-chart-box {
+  height: 430px;
+  background: #08100e;
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid rgba(62, 252, 162, 0.12);
+}
+.selected-crypto-chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .selected-crypto-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .selected-crypto-chart-box {
+    height: 340px;
+  }
+}
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+  background: rgba(11, 18, 16, 0.92);
+  color: #3efca2;
+  border: 1px solid rgba(62, 252, 162, 0.3);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: 0 0 18px rgba(62, 252, 162, 0.14);
+          box-shadow: 0 0 18px rgba(62, 252, 162, 0.14);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+.language-toggle:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  background: rgba(62, 252, 162, 0.08);
+  -webkit-box-shadow: 0 0 22px rgba(62, 252, 162, 0.24);
+          box-shadow: 0 0 22px rgba(62, 252, 162, 0.24);
+}
+
+@media (max-width: 768px) {
+  .language-toggle-fixed {
+    top: 14px;
+    right: 14px;
+    padding: 8px 13px;
+    font-size: 0.85rem;
+  }
 }
